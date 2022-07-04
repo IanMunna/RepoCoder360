@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Proyecto1.views import saludar
+from Proyecto1.views import saludar, segunda_vista, diaDeHoy, saludo_con_nombre, year_de_nacimiento, probandoHtml #funciones que creamos en "views.py"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
+    path('saludo/', saludar, name='saludar'), #ruta de la funcion creada
+    path('segundavista/', segunda_vista, name='segundavista'),
+    path('diaDeHoy/', diaDeHoy),
+    path('saludo_con_nombre/<nombre>', saludo_con_nombre),
+    path('year_de_nacimiento/<edad>', year_de_nacimiento),
+    path('probandoHtml', probandoHtml),
+    ]
